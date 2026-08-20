@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create_migration": "npx typeorm -d ./src/database/config.js migration:generate ./src/database/migrations/db --outputJs",
+    "execute_migration": "npx typeorm -d ./src/database/config.js migration:run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mysql2": "^3.22.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^1.0.0"
   }
 }
