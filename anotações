@@ -7,3 +7,7 @@ post cadastrar
 catch cadastrar
 putch patch atualizar 
 delete excluir
+
+request= os dados enviados do front para o back 
+
+response = é a resposta que será devolvida para o front 

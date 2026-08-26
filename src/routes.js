@@ -2,6 +2,6 @@ import express from "express";
 import usercontroller from "./controllers/usercontroller.js"
 
 const routes = express();
-route.use("/user", userController);
+routes.use("/user", usercontroller);
 
-export default route;
+export default routes;

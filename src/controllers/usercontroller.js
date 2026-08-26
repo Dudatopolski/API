@@ -1,9 +1,21 @@
 import express from "express";
 
-const route = express.Router();
+const routes = express.Router();
 
-route.get("/", (request, response) =>{
+routes.get("/", (request, response) =>{
     return response.send("Deu certo!!!");
 });
 
-export default route;
+routes.post("/",(request, response) => {
+    //name, email, password, typeuser
+    const {name, email, password, typeuser} = request.body;
+
+
+    console.log(`O name cadastrado foi ${name}`);
+    console.log(`O email cadastrado foi ${email}`);
+    console.log(`O password cadastrado foi ${password}`);
+    console.log(`O typeuser cadastrado foi ${typeuser}`);
+});
+export default routes;
+
+
