@@ -6,7 +6,7 @@ const AppDataSource = new DataSource({
     host: "localhost",
     username: "root",
     port: 3306,
-    password: "etecembu@123",
+    password: "",
     database: "atividade_api",
     entities: ["src/model/*.js"],
     migrations: ["src/database/migrations/*.cjs"],
