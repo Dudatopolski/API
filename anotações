@@ -11,3 +11,7 @@ delete excluir
 request= os dados enviados do front para o back 
 
 response = é a resposta que será devolvida para o front 
+
+usertable = é a variável que representa a tabela de usuários no banco 
+
+findby = vai servir como um select do mysql 

@@ -1,12 +1,14 @@
 import express, { response } from 'express';
 import { AppDataSource }from "../database/config.js" ;
 import user from "../model/user.js"
+import { IsNull } from 'typeorm';
  
 const route = express.Router();
 const userTable =  AppDataSource.getRepository(user);
 
-route.get("/", (request,response) => {
-    return response.send ("Deu certo!!!");
+route.get("/",async (request,response) => {
+    const users = await userTable.find();
+    return response.status(200).send({response:users});
 
 });
 
