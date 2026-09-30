@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import { AppDataSource }from "../database/config.js" ;
 import user from "../model/user.js"
-import { IsNull } from 'typeorm';
+import { IsNull, Like } from 'typeorm';
  
 const route = express.Router();
 const userTable =  AppDataSource.getRepository(user);
@@ -12,8 +12,17 @@ route.get("/",async (request,response) => {
 
 });
 
-route.post ("/", async (request,response) => {
+route.get ("/:tipo", async (request,response) => {
+    const{tipo} = request.params;
+    const resultado = await userTable.findBy ({typeUser: Like(`%${tipo}&`)})
+    return response.status(200).send(resultado);
 
+    if (resultado.lenght < 1) {
+    return response.status(200).send({response: "Nenhum dado foi localizado"});
+    } 
+});
+
+route.post("/", async (request, response) => {
 const{name,email,password,typeUser} = request.body;
 
 if(name.lenght <2 ){
@@ -40,7 +49,10 @@ return response.status (201).send({response: "Usuario cadastrado com sucesso"});
 catch(err){
     return response.status(500).send({response :err});
 }
+
+
 });
+
 
 export default route;
 
