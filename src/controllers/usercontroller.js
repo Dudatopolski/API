@@ -53,6 +53,30 @@ catch(err){
 
 });
 
+route.put("/:id", async (request,response) =>{
+    const {name, password, typeUser, email} = request.body;
+    const {id} = request.params;
+
+    if(name.lenght <2 ){
+    return response.status(400).send ({response: "O nome deve conter mais de 1 caracter"});
+}
+
+if(!email.includes("@")){
+   return response.status(400).send ({response: "O email informado está invalido"});
+}
+if(password.length< 6) {
+    return response.status(400).send ({response: "A senha deve conter no minimo 6 caracteres"});
+}
+
+if(typeUser != "admin" && typeUser != "comum") {
+    return response.status(400).send ({response: "O tipo de usuário precisa ser 'admin' ou 'comum'"});
+}
+
+    userTable.update({id}, {name, email, password, typeUser});
+    return response.status(200). send ({response: "Atualizado com sucesso"});
+
+})
+
 
 export default route;
 
