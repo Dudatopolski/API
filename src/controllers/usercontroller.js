@@ -75,7 +75,8 @@ if(typeUser != "admin" && typeUser != "comum") {
     userTable.update({id}, {name, email, password, typeUser});
     return response.status(200). send ({response: "Atualizado com sucesso"});
 
-})
+});
+
 
 
 export default route;
