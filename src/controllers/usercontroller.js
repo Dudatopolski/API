@@ -72,14 +72,29 @@ if(typeUser != "admin" && typeUser != "comum") {
     return response.status(400).send ({response: "O tipo de usuário precisa ser 'admin' ou 'comum'"});
 }
 
-    userTable.update({id}, {name, email, password, typeUser});
+    await userTable.update({id}, {name, email, password, typeUser});
     return response.status(200). send ({response: "Atualizado com sucesso"});
+
+});
+
+route.delete("/:id", async (request, response) => {
+    const {id} = request.params
+
+    //Hard Delete
+    //await userTable.delete({id});
+
+    //Soft Delete
+    await userTable.update({id}, {deletedAt: () => "CURRENT_TIMESTAMP"})
+
+    return response.status(200).send({response: "Usuario excluido com sucesso."});
+
 
 });
 
 
 
 export default route;
+
 
 
 

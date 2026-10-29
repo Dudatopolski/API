@@ -1,0 +1,229 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_7058dacfd54e47c0bcc8743404e0f418
+  created: 1789607494046
+  modified: 1793227191350
+  description: ""
+collection:
+  - url: http://localhost:3333/user
+    name: New Request
+    meta:
+      id: req_f15d71ea83ad44b7a67ee82390780c5d
+      created: 1793227224407
+      modified: 1793227396734
+      isPrivate: false
+      description: ""
+      sortKey: -1793227224407
+    method: PUT
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/user
+    name: New Request
+    meta:
+      id: req_ec778b9dbc4b41bbadfe4b2a793e4f47
+      created: 1793227234299
+      modified: 1793227865276
+      isPrivate: false
+      description: ""
+      sortKey: -1793227234299
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+        	"name":"Maria Eduarda",
+        	"email":"dudatopolski@gmail.com",
+        	"password":"dudaumdoistres",
+        	"typeUser":"admin"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/user
+    name: New Request
+    meta:
+      id: req_440dedf2664e494b92fdf8264685b487
+      created: 1793227243583
+      modified: 1793227723746
+      isPrivate: false
+      description: ""
+      sortKey: -1793227243583
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/user
+    name: New Request
+    meta:
+      id: req_bc049559ef8042cc957e48eadab5b1af
+      created: 1793227714236
+      modified: 1793227827126
+      isPrivate: false
+      description: ""
+      sortKey: -1793227714236
+    method: DELETE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/ator/
+    name: ator
+    meta:
+      id: req_8d89e7dc0be846bca39c7bf0dbe265ce
+      created: 1793227847985
+      modified: 1793231845781
+      isPrivate: false
+      description: ""
+      sortKey: -1793227847985
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_ator":"tom holland",
+        	"naciolidade":"noruegues",
+        	"sexo":"m",
+        	"data_nascimento":"1987/07/20",
+        	"foto_autor":"aranha.png"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/genero/
+    name: genero
+    meta:
+      id: req_7527b539ecea4fa99098a1b497f983e1
+      created: 1793227957106
+      modified: 1793231827743
+      isPrivate: false
+      description: ""
+      sortKey: -1793227957106
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_genero":"drama"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/diretor/
+    name: diretor
+    meta:
+      id: req_3a6f3ebd01884016b22b3c9c21a94b31
+      created: 1793227996319
+      modified: 1793232031390
+      isPrivate: false
+      description: ""
+      sortKey: -1793227996319
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_diretor":"André",
+        	"nacionalidade":"Brasileiro",
+        	"sexo":"m",
+        	"data_nascimento":"1987/03/20",
+        	"foto_diretor":"canil.png"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3333/premiacao/
+    name: premiacao
+    meta:
+      id: req_26ad68633d5e4486b55ca7829c9ed979
+      created: 1793228057651
+      modified: 1793232386560
+      isPrivate: false
+      description: ""
+      sortKey: -1793228057651
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_premiacao":"melhor ator",
+        	"valor_premiacao":"1005"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_559bd399a84c9c788e8a55bd68b16839adc10d6f
+    created: 1793227204389
+    modified: 1793227204389
+environments:
+  name: Base Environment
+  meta:
+    id: env_559bd399a84c9c788e8a55bd68b16839adc10d6f
+    created: 1789607494047
+    modified: 1793227191350
+    isPrivate: false
