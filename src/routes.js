@@ -1,12 +1,14 @@
 import express from "express";
 import usercontroller from "./controllers/usercontroller.js"
 import atorcontroller from "./controllers/atorcontroller.js"
+import login from './controller/logincontroller.js'
 import premiacaocontroller from "./controllers/premiacaocontroller.js"
 import generocontroller from "./controllers/generocontroller.js"
 import diretorcontroller from "./controllers/diretorcontroller.js"
 
 const routes = express();
 
+routes.use("/login", login);
 routes.use("/user", usercontroller);
 routes.use("/ator", atorcontroller);
 routes.use("/diretor", diretorcontroller);
