@@ -3,6 +3,8 @@ import { AppDataSource } from "../database/config.js";
 import user from "../model/user.js";
 import { IsNull } from "typeorm";
 import { generateNewPassword } from "../utils/login.js"
+import { generateToken } from "../utils/jwt.js"
+
 
 
 const route = express.Router();
@@ -14,6 +16,12 @@ route.post("/" async (request, response) => {
     const userLogin = await userTable.findOneby({email, password, deletedAt: IsNull ()});
 
     if(userLogin) {
+        const token = generateToken({
+            user: userLogin.name, 
+            email: userLogin.email,
+            typeUser: userLogin.typeUser
+        });
+
         return response.status(200).send({message: "Login efetuado com sucesso"});
 
     } else {
