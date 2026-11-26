@@ -10,7 +10,7 @@ import { generateToken } from "../utils/jwt.js"
 const route = express.Router();
 const userTable = AppDataSource.getRepository(user);
 
-route.post("/" async (request, response) => {
+route.post("/", async (request, response) => {
     const {email, password} = request.body;
     
     const userLogin = await userTable.findOneby({email, password, deletedAt: IsNull ()});
